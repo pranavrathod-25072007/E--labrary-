@@ -5,16 +5,23 @@
 'use strict';
 
 /** JSON fetch wrapper — cookies are sent automatically (same origin). */
+const BASE_URL = 'https://e-labrary.onrender.com';
+
 async function api(path, options = {}) {
-  const opts = { credentials: 'same-origin', ...options };
-  opts.headers = { ...(options.headers || {}) };
+  const opts = { credentials: 'include', ...options };
+  if (path.startsWith('/api')) {
+    path = BASE_URL + path;
+  }
+  opts.headers = { ... (options.headers || {}) };
   if (opts.body && typeof opts.body === 'object' && !(opts.body instanceof FormData)) {
     opts.headers['Content-Type'] = 'application/json';
     opts.body = JSON.stringify(opts.body);
   }
   const res = await fetch(path, opts);
   let data = null;
-  try { data = await res.json(); } catch { /* no body */ }
+  try {
+    data = await res.json();
+  } catch { /* no body */ }
   if (!res.ok) {
     const err = new Error((data && data.error) || `Request failed (${res.status})`);
     err.status = res.status;
