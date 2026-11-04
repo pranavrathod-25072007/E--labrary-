@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notice Board · E-Library</title>
+  <meta name="description" content="All college and library announcements in one place — new arrivals, circulars, timings and events.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%234f46e5'/><path d='M6 6.5A2.5 2.5 0 0 1 8.5 4H12v14H8.5A2.5 2.5 0 0 0 6 20.5zM18 6.5A2.5 2.5 0 0 0 15.5 4H12v14h3.5a2.5 2.5 0 0 1 2.5 2.5z' fill='white'/></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="images/jscoe-building.jpg" alt="JSCOE building">
+        </span>
+        <span>E-Library<small>JS College of Engineering</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice Board</a>
+        <a href="admin.html">Admin</a>
+        <div class="mobile-auth" data-auth-slot></div>
+      </nav>
+      <div class="header-auth" data-auth-slot></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Notice board</h2>
+          <p>College circulars and library announcements, newest first — no more scattered paper notices.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="cat-chips">
+          <button class="chip" data-cat="" type="button">All notices</button>
+          <button class="chip" data-cat="College" type="button">College</button>
+          <button class="chip" data-cat="Library" type="button">Library</button>
+        </div>
+        <span class="small muted" id="notice-count" style="margin-left:auto"></span>
+      </div>
+
+      <div class="notice-list" id="notice-list">
+        <div class="loading"><div class="spinner"></div>Loading notices…</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff">
+          <span class="brand-mark"><img src="images/jscoe-building.jpg" alt="JSCOE building"></span>
+          <span>E-Library<small style="color:#94a3b8">Digital Library Management System</small></span>
+        </a>
+        <p>A web-based library platform that brings the physical library, digital books and college announcements onto one screen.</p>
+        <p class="footer-team">Community Engagement Project · A.Y. 2026–27<br>Department of Information Technology, Jayawantrao Sawant College of Engineering, Pune</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice board</a>
+        <a href="login.html">Student / faculty login</a>
+        <a href="register.html">Create an account</a>
+        <a href="admin.html">Librarian admin panel</a>
+      </div>
+      <div>
+        <h4>Project team</h4>
+        <div class="footer-team">
+          Mahesh Murshetwad (2229)<br>
+          Swaresh Chapke (2230)<br>
+          Pranav Rathod (2226)<br>
+          Aditya Dawange (2228)
+        </div>
+        <p style="margin-top:10px">Guided by Prof. Ashwini Tadkal</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year>2026</span> E-Library · JSCOE, Pune</span>
+      <span>Built with HTML5, CSS3, JavaScript, Node.js &amp; Express</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/notices.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Library · Digital Library Management System</title>
+  <meta name="description" content="E-Library — search the college library catalogue with live availability, read PDF books, listen to audio books and follow every college and library notice.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%234f46e5'/><path d='M6 6.5A2.5 2.5 0 0 1 8.5 4H12v14H8.5A2.5 2.5 0 0 0 6 20.5zM18 6.5A2.5 2.5 0 0 0 15.5 4H12v14h3.5a2.5 2.5 0 0 1 2.5 2.5z' fill='white'/></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="images/jscoe-building.jpg" alt="JSCOE building">
+        </span>
+        <span>E-Library<small>JS College of Engineering</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice Board</a>
+        <a href="admin.html">Admin</a>
+        <div class="mobile-auth" data-auth-slot></div>
+      </nav>
+      <div class="header-auth" data-auth-slot></div>
+    </div>
+  </header>
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero">
+    <div class="container">
+      <h1>The college library, now in your pocket.</h1>
+      <p class="lede">
+        Search the catalogue and see instantly whether a book is on the shelf, read PDF books
+        online, listen to audio books in the browser, and never miss a college or library notice again.
+      </p>
+
+      <form class="hero-search" id="hero-search">
+        <input type="search" name="q" placeholder="Search by title, author, subject or ISBN…"
+               aria-label="Search the catalogue" autocomplete="off">
+        <button class="btn" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          Search
+        </button>
+      </form>
+
+      <div class="quick-chips">
+        <span class="small" style="color:#c7d2fe;align-self:center;margin-right:4px">Popular:</span>
+        <a href="books.html?q=Computer%20Science">Computer Science</a>
+        <a href="books.html?q=Algorithms">Algorithms</a>
+        <a href="books.html?digital=pdf">PDF books</a>
+        <a href="books.html?digital=audio">Audio books</a>
+        <a href="books.html?status=available">Available now</a>
+      </div>
+
+      <div class="hero-figures" id="hero-figures">
+        <div><b>—</b><span>Catalogue titles</span></div>
+        <div><b>—</b><span>Physical copies</span></div>
+        <div><b>—</b><span>Digital resources</span></div>
+        <div><b>—</b><span>Live notices</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= STATS ============================= -->
+  <section class="section">
+    <div class="container">
+      <div class="stat-grid" id="stat-grid">
+        <div class="stat-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5z"/></svg></div><b>—</b><span>Titles in the catalogue</span></div>
+        <div class="stat-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9.5 10v9M14.5 10v9M19 10v9"/><path d="M3 20h18"/></svg></div><b>—</b><span>Physical copies on shelf</span></div>
+        <div class="stat-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 13h6M9 17h6"/></svg></div><b>—</b><span>PDF &amp; audio resources</span></div>
+        <div class="stat-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></div><b>—</b><span>Notices published</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FEATURES =========================== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Everything the library offers — on one screen</h2>
+          <p>Physical books, digital books and announcements, brought together for the college community.</p>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></div>
+          <h3>Searchable catalogue</h3>
+          <p>Find any book by title, author, subject or keyword, with a live <b>Available / Issued</b> status and shelf location — no more wasted trips.</p>
+        </div>
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 13h6M9 17h4"/></svg></div>
+          <h3>PDF books</h3>
+          <p>Read digital books directly in your browser’s viewer, or download them for offline study where the librarian permits it.</p>
+        </div>
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="14" width="4.5" height="7" rx="2"/><rect x="17" y="14" width="4.5" height="7" rx="2"/></svg></div>
+          <h3>Audio books</h3>
+          <p>Prefer listening? Stream narrated books with play, pause, seek and volume controls — on a phone or a computer.</p>
+        </div>
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></div>
+          <h3>Central notice board</h3>
+          <p>College circulars, new arrivals, timings and events in one dependable place, filterable by College and Library.</p>
+        </div>
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Role-based admin panel</h3>
+          <p>A single secure dashboard where the librarian adds books, uploads files, records issues and returns, and publishes notices.</p>
+        </div>
+        <div class="feature">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
+          <h3>Works on any device</h3>
+          <p>A simple responsive interface that works equally well on a lab computer, a tablet or a phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== NOTICES ============================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Latest notices</h2>
+          <p>Announcements from the college and the library, newest first.</p>
+        </div>
+        <a class="btn btn-outline btn-sm" href="notices.html">View all notices →</a>
+      </div>
+      <div class="notice-list" id="latest-notices">
+        <div class="loading"><div class="spinner"></div>Loading notices…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== DIGITAL COLLECTION ====================== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Read or listen right now</h2>
+          <p>Titles with a digital copy — open the PDF in the browser or press play on the audio book.</p>
+        </div>
+        <a class="btn btn-outline btn-sm" href="books.html">Browse full catalogue →</a>
+      </div>
+      <div class="book-grid" id="digital-grid">
+        <div class="loading" style="grid-column:1/-1"><div class="spinner"></div>Loading collection…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff">
+          <span class="brand-mark"><img src="images/jscoe-building.jpg" alt="JSCOE building"></span>
+          <span>E-Library<small style="color:#94a3b8">Digital Library Management System</small></span>
+        </a>
+        <p>A web-based library platform that brings the physical library, digital books and college announcements onto one screen — searchable catalogue with live availability, PDF and audio books, and a central notice board.</p>
+        <p class="footer-team">Community Engagement Project · A.Y. 2026–27<br>Department of Information Technology, Jayawantrao Sawant College of Engineering, Pune</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice board</a>
+        <a href="login.html">Student / faculty login</a>
+        <a href="register.html">Create an account</a>
+        <a href="admin.html">Librarian admin panel</a>
+      </div>
+      <div>
+        <h4>Project team</h4>
+        <div class="footer-team">
+          Mahesh Murshetwad (2229)<br>
+          Swaresh Chapke (2230)<br>
+          Pranav Rathod (2226)<br>
+          Aditya Dawange (2228)
+        </div>
+        <p style="margin-top:10px">Guided by Prof. Ashwini Tadkal</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year>2026</span> E-Library · JSCOE, Pune</span>
+      <span>Built with HTML5, CSS3, JavaScript, Node.js &amp; Express</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

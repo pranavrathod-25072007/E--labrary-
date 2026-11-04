@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel · E-Library</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%234f46e5'/><path d='M6 6.5A2.5 2.5 0 0 1 8.5 4H12v14H8.5A2.5 2.5 0 0 0 6 20.5zM18 6.5A2.5 2.5 0 0 0 15.5 4H12v14h3.5a2.5 2.5 0 0 1 2.5 2.5z' fill='white'/></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="images/jscoe-building.jpg" alt="JSCOE building">
+        </span>
+        <span>E-Library<small>JS College of Engineering</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice Board</a>
+        <a href="admin.html">Admin</a>
+        <div class="mobile-auth" data-auth-slot></div>
+      </nav>
+      <div class="header-auth" data-auth-slot></div>
+    </div>
+  </header>
+
+  <!-- ===================== access check ===================== -->
+  <div id="guard">
+    <div class="loading" id="guard-loading">
+      <div class="spinner"></div>
+      Checking access…
+    </div>
+
+    <div class="denied hidden" id="denied">
+      <div class="lock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+      <h1>Access denied</h1>
+      <p id="denied-msg">The administrator panel is restricted to library staff. Students and faculty can browse the catalogue and notices instead.</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="login.html?next=admin.html">Log in as administrator</a>
+        <a class="btn btn-outline" href="index.html">Back to home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== admin application ===================== -->
+  <div id="admin-app" class="hidden">
+    <div class="admin-hero">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap">
+          <div>
+            <h1>Librarian admin panel <span class="badge-role">Administrator</span></h1>
+            <p>Manage books, digital files, circulation and notices from a single dashboard.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+            <div class="small" id="admin-who" style="color:#e0e7ff;padding-top:8px"></div>
+            <button class="btn btn-sm" id="btn-add-student" type="button"
+                    style="background:#fff;color:#4f46e5;box-shadow:0 8px 18px -12px rgba(0,0,0,.6)">＋ Register student</button>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" type="button" data-tab="dashboard">Dashboard</button>
+          <button class="tab" type="button" data-tab="books">Books <span class="count hidden" id="tab-books-count"></span></button>
+          <button class="tab" type="button" data-tab="circulation">Circulation <span class="count hidden" id="tab-issues-count"></span></button>
+          <button class="tab" type="button" data-tab="notices">Notices <span class="count hidden" id="tab-notices-count"></span></button>
+          <button class="tab" type="button" data-tab="history">Login history</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="tab-panel" id="panel-dashboard"><div class="loading"><div class="spinner"></div>Loading dashboard…</div></div>
+      <div class="tab-panel hidden" id="panel-books"></div>
+      <div class="tab-panel hidden" id="panel-circulation"></div>
+      <div class="tab-panel hidden" id="panel-notices"></div>
+      <div class="tab-panel hidden" id="panel-history"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff">
+          <span class="brand-mark"><img src="images/jscoe-building.jpg" alt="JSCOE building"></span>
+          <span>E-Library<small style="color:#94a3b8">Digital Library Management System</small></span>
+        </a>
+        <p>A web-based library platform that brings the physical library, digital books and college announcements onto one screen.</p>
+        <p class="footer-team">Community Engagement Project · A.Y. 2026–27<br>Department of Information Technology, Jayawantrao Sawant College of Engineering, Pune</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice board</a>
+        <a href="login.html">Student / faculty login</a>
+        <a href="register.html">Create an account</a>
+        <a href="admin.html">Librarian admin panel</a>
+      </div>
+      <div>
+        <h4>Project team</h4>
+        <div class="footer-team">
+          Mahesh Murshetwad (2229)<br>
+          Swaresh Chapke (2230)<br>
+          Pranav Rathod (2226)<br>
+          Aditya Dawange (2228)
+        </div>
+        <p style="margin-top:10px">Guided by Prof. Ashwini Tadkal</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year>2026</span> E-Library · JSCOE, Pune</span>
+      <span>Built with HTML5, CSS3, JavaScript, Node.js &amp; Express</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>

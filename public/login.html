@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · E-Library</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%234f46e5'/><path d='M6 6.5A2.5 2.5 0 0 1 8.5 4H12v14H8.5A2.5 2.5 0 0 0 6 20.5zM18 6.5A2.5 2.5 0 0 0 15.5 4H12v14h3.5a2.5 2.5 0 0 1 2.5 2.5z' fill='white'/></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="images/jscoe-building.jpg" alt="JSCOE building">
+        </span>
+        <span>E-Library<small>JS College of Engineering</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Catalogue</a>
+        <a href="notices.html">Notice Board</a>
+        <a href="admin.html">Admin</a>
+        <div class="mobile-auth" data-auth-slot></div>
+      </nav>
+      <div class="header-auth" data-auth-slot></div>
+    </div>
+  </header>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="sub">Log in with your college account to borrow books and manage your reading.</p>
+
+      <div id="form-error" class="form-error hidden"></div>
+
+      <form id="login-form" method="post" novalidate>
+        <div class="field">
+          <label for="email">E-mail address <span class="req">*</span></label>
+          <input class="input" type="email" id="email" name="email" placeholder="you@jscoe.edu.in" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="password">Password <span class="req">*</span></label>
+          <input class="input" type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <button class="btn btn-block btn-lg" type="submit" id="submit-btn">Log in</button>
+      </form>
+
+      <p class="small center muted" style="margin-top:16px">
+        New here? <a href="register.html">Create an account</a>
+      </p>
+
+      <div class="demo-box">
+        <b>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+          Demo accounts
+        </b>
+        <div class="row"><span>Librarian (admin)</span><span><code>librarian@jscoe.edu.in</code> <code>admin123</code></span></div>
+        <div class="row"><span>Student</span><span><code>pranav.rathod@jscoe.edu.in</code> <code>student123</code></span></div>
+        <div class="row"><span>Faculty</span><span><code>faculty@jscoe.edu.in</code> <code>faculty123</code></span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

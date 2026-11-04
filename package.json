@@ -1,0 +1,21 @@
+{
+  "name": "e-library",
+  "version": "1.0.0",
+  "description": "E-Library: A Digital Library Management System - college library platform with catalogue, availability, PDF books, audio books, notice board and admin panel.",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "seed": "node server/seed.js",
+    "assets": "python scripts/make_assets.py"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.0"
+  },
+  "license": "MIT"
+}
