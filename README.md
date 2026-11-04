@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Library — A Digital Library Management System
 
 A web-based digital library for the college community: a searchable catalogue of the
@@ -151,3 +152,7 @@ recommendations from reading history, NDLI integration, push notifications.
 
 *Community Engagement Project · Team: Mahesh Murshetwad (2229), Swaresh Chapke (2230),
 Pranav Rathod (2226), Aditya Dawange (2228) · Guided by Prof. Ashwini Tadkal · JSCOE, Pune*
+=======
+# E--labrary-
+The college library, now in your pocket
+>>>>>>> 0f16bf376a4bae350cd7dbc09489c13c4aba1968
