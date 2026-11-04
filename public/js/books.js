@@ -81,7 +81,7 @@ async function load() {
     const params = new URLSearchParams({
       q: state.q, status: state.status, digital: state.digital, sort: state.sort,
     });
-    const { books, total } = await api('/api/books?' + params.toString());
+    const { books, total } = await api('https://e-labrary.onrender.com/api/books?' + params.toString());
 
     if (!books.length) {
       count.textContent = '0 results';
